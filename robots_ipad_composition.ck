@@ -44,18 +44,34 @@ Brigid brig;
 brig.init();
 
 fun void Solenoids(){
-    while (true) {
-        brig.note(0, 127);
-        Math.random2f(0.1, 0.5)::second => now;
-        brig.note(1, 127);
-        Math.random2f(0.1, 0.5)::second => now;
+ 
+        for (5 => int vel; vel < 100; vel + 2 => vel){
+        brig.note(0, vel);
+        Math.random2f(0.1, 10.5)::second => now;
+        brig.note(1, vel);
+        Math.random2f(0.1, 10.5)::second => now;
+        brig.note(2, vel);
+        Math.random2f(0.1, 10.5)::second => now;
+        brig.note(3, vel);
+        Math.random2f(0.1, 10.5)::second => now;
+        brig.note(4, vel);
+        Math.random2f(0.1, 10.5)::second => now;
+        brig.note(5, vel);
+        Math.random2f(0.1, 10.5)::second => now;
     }
 }
-// spork ~ Solenoids();
+spork ~ Solenoids();
+spork ~ Solenoids();
+spork ~ Solenoids();
+spork ~ Solenoids();
+spork ~ Solenoids();
+spork ~ Solenoids();
+spork ~ Solenoids();
+spork ~ Solenoids();
 
 while(1){
-    brig.note(5, 127);
-    Math.random2f(0.1, 0.5)::second => now;
+    //brig.note(5, 127);
+    //Math.random2f(0.1, 0.5)::second => now;
     // Solenoids();
     50::ms => now;
 }

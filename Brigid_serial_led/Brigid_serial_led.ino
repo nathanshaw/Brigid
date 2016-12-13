@@ -6,10 +6,12 @@
 #define LED_POWER 12
 #define LED_STATUS 13
 #define ARDUINO_ID 1
-#define RED_LED A2
-#define GREEN_LED A3
-#define BLUE_LED A4
+#define LED_TEST 1
+#define LED_FEEDBACK 1
 // if using MEEPO the LED pins are differerent
+int RED_LED = A2;
+int GREEN_LED = A4;
+int BLUE_LED = A3;
 
 char bytes[2];
 short notes[NUM_SOLENOIDS];
@@ -32,7 +34,7 @@ void setup() {
   pinMode(GREEN_LED, OUTPUT);
   pinMode(BLUE_LED, OUTPUT);
   digitalWrite(GREEN_LED, HIGH);
-  digitalWrite(RED_LED, HIGH);
+  digitalWrite(RED_LED, LOW);
   digitalWrite(BLUE_LED, LOW);
   for (int i = 0; i < NUM_SOLENOIDS; i++) {
     pinMode(actuators[i], OUTPUT);
@@ -41,13 +43,12 @@ void setup() {
   if (LED_TEST == 1){
     for (int i; i < 6; i++) {
       digitalWrite(actuators[i], HIGH);
-      delay(100);
+      delay(50);
       digitalWrite(actuators[i], LOW);
-      delay(1000);
+      delay(70);
     } 
   }
-  digitalWrite(GREEN_LED, LOW);
-  digitalWrite(RED_LED, LOW); 
+  digitalWrite(BLUE_LED, LOW); 
 }
 
 ISR(TIMER2_OVF_vect) {
@@ -62,11 +63,11 @@ ISR(TIMER2_OVF_vect) {
     }
   }
   if (statustimer > 0 && LED_FEEDBACK) {
-    digitalWrite(BLUE_LED, HIGH);
+    digitalWrite(A4, HIGH);
     statustimer--;
   }
   else {
-    digitalWrite(BLUE_LED, LOW);
+    digitalWrite(A4, LOW);
   }
 }
 
@@ -86,6 +87,9 @@ void loop() {
       if (pitch == 63 && velocity == 1023 && handshake == 0) {
         Serial.write(ARDUINO_ID);
         handshake = 1;
+        digitalWrite(RED_LED, LOW);
+        digitalWrite(GREEN_LED, LOW);
+        digitalWrite(BLUE_LED, LOW);
       }
       if (pitch >= 0 && pitch <= NUM_SOLENOIDS) {
         statustimer = 120;

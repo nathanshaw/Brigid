@@ -13,7 +13,7 @@
 <layer number="3" name="Route3" color="4" fill="3" visible="no" active="yes"/>
 <layer number="14" name="Route14" color="1" fill="6" visible="no" active="yes"/>
 <layer number="15" name="Route15" color="4" fill="6" visible="no" active="yes"/>
-<layer number="16" name="Bottom" color="1" fill="1" visible="no" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
@@ -167,7 +167,7 @@
 <text x="2.54" y="31.75" size="1.016" layer="25" font="vector" rot="R90" align="center-right">Brigid Control</text>
 <text x="3.81" y="30.48" size="0.8128" layer="25" font="vector" rot="R90" align="center-right">Designed By</text>
 <text x="5.08" y="34.29" size="0.8128" layer="25" font="vector" rot="R90" align="center-right">Nathan Villicana-Shaw</text>
-<text x="6.35" y="29.21" size="0.6096" layer="25" font="vector" rot="R90" align="center-right">Fall 2016</text>
+<text x="6.35" y="29.21" size="0.6096" layer="25" font="vector" rot="R90" align="center-right">Spring 2017</text>
 </plain>
 <libraries>
 <library name="SparkFun-DiscreteSemi">
@@ -402,43 +402,28 @@ P/N B4B-PH-K-S.  Mating plug PHR-4 &lt;br&gt;</description>
 <clearance class="0" value="0.4064"/>
 </class>
 </classes>
-<designrules name="SeeedStudio_2layer_DRU_no_angle_20140221">
-<description language="de">&lt;b&gt;EAGLE Design Rules&lt;/b&gt;
-&lt;p&gt;
-Die Standard-Design-Rules sind so gewählt, dass sie für 
-die meisten Anwendungen passen. Sollte ihre Platine 
-besondere Anforderungen haben, treffen Sie die erforderlichen
-Einstellungen hier und speichern die Design Rules unter 
-einem neuen Namen ab.</description>
-<description language="en">&lt;b&gt;EAGLE Design Rules&lt;/b&gt;
-&lt;p&gt;
-The default Design Rules have been set to cover
-a wide range of applications. Your particular design
-may have different requirements, so please make the
-necessary adjustments and save your customized
-design rules under a new name.</description>
-<description language="zh">&lt;b&gt;Seeed Studio EAGLE Design Rules&lt;/b&gt;
-</description>
+<designrules name="OthermillDRC_1_64_v2">
+<description language="en">&lt;b&gt;Othermill EAGLE Design Rules v2&lt;/b&gt;&lt;p&gt;DRC for Othermill, 1/64&quot; tool&lt;/p&gt;&lt;b&gt;-- Rules --&lt;/b&gt;&lt;li&gt;8 mil traces&lt;/li&gt;&lt;li&gt;15.7mil clearance&lt;/li&gt;</description>
 <param name="layerSetup" value="(1*16)"/>
-<param name="mtCopper" value="0.035mm 0.0175mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.0175mm 0.035mm"/>
-<param name="mtIsolate" value="1.5mm 1.1mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm"/>
-<param name="mdWireWire" value="6mil"/>
-<param name="mdWirePad" value="6mil"/>
-<param name="mdWireVia" value="6mil"/>
-<param name="mdPadPad" value="6mil"/>
-<param name="mdPadVia" value="6mil"/>
-<param name="mdViaVia" value="6mil"/>
+<param name="mtCopper" value="0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm"/>
+<param name="mtIsolate" value="1.5mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm"/>
+<param name="mdWireWire" value="0.39878125mm"/>
+<param name="mdWirePad" value="0.39878125mm"/>
+<param name="mdWireVia" value="0.39878125mm"/>
+<param name="mdPadPad" value="0.39878125mm"/>
+<param name="mdPadVia" value="0.39878125mm"/>
+<param name="mdViaVia" value="0.39878125mm"/>
 <param name="mdSmdPad" value="0mil"/>
 <param name="mdSmdVia" value="0mil"/>
 <param name="mdSmdSmd" value="0mil"/>
 <param name="mdViaViaSameLayer" value="8mil"/>
 <param name="mnLayersViaInSmd" value="2"/>
-<param name="mdCopperDimension" value="10mil"/>
-<param name="mdDrill" value="10mil"/>
+<param name="mdCopperDimension" value="0mil"/>
+<param name="mdDrill" value="1mil"/>
 <param name="mdSmdStop" value="0mil"/>
-<param name="msWidth" value="6mil"/>
-<param name="msDrill" value="12mil"/>
-<param name="msMicroVia" value="12mil"/>
+<param name="msWidth" value="16mil"/>
+<param name="msDrill" value="31mil"/>
+<param name="msMicroVia" value="9.99mm"/>
 <param name="msBlindViaRatio" value="0.5"/>
 <param name="rvPadTop" value="0.25"/>
 <param name="rvPadInner" value="0.25"/>
@@ -447,35 +432,35 @@ design rules under a new name.</description>
 <param name="rvViaInner" value="0.25"/>
 <param name="rvMicroViaOuter" value="0.25"/>
 <param name="rvMicroViaInner" value="0.25"/>
-<param name="rlMinPadTop" value="10mil"/>
-<param name="rlMaxPadTop" value="20mil"/>
-<param name="rlMinPadInner" value="10mil"/>
-<param name="rlMaxPadInner" value="20mil"/>
-<param name="rlMinPadBottom" value="10mil"/>
-<param name="rlMaxPadBottom" value="20mil"/>
-<param name="rlMinViaOuter" value="6mil"/>
-<param name="rlMaxViaOuter" value="20mil"/>
-<param name="rlMinViaInner" value="6mil"/>
-<param name="rlMaxViaInner" value="20mil"/>
+<param name="rlMinPadTop" value="0mil"/>
+<param name="rlMaxPadTop" value="9999mil"/>
+<param name="rlMinPadInner" value="0mil"/>
+<param name="rlMaxPadInner" value="9999mil"/>
+<param name="rlMinPadBottom" value="0mil"/>
+<param name="rlMaxPadBottom" value="9999mil"/>
+<param name="rlMinViaOuter" value="15mil"/>
+<param name="rlMaxViaOuter" value="25mil"/>
+<param name="rlMinViaInner" value="8mil"/>
+<param name="rlMaxViaInner" value="25mil"/>
 <param name="rlMinMicroViaOuter" value="4mil"/>
 <param name="rlMaxMicroViaOuter" value="20mil"/>
 <param name="rlMinMicroViaInner" value="4mil"/>
 <param name="rlMaxMicroViaInner" value="20mil"/>
 <param name="psTop" value="-1"/>
 <param name="psBottom" value="-1"/>
-<param name="psFirst" value="0"/>
-<param name="psElongationLong" value="100"/>
+<param name="psFirst" value="-1"/>
+<param name="psElongationLong" value="50"/>
 <param name="psElongationOffset" value="100"/>
-<param name="mvStopFrame" value="1"/>
-<param name="mvCreamFrame" value="0"/>
-<param name="mlMinStopFrame" value="2mil"/>
+<param name="mvStopFrame" value="0.05"/>
+<param name="mvCreamFrame" value="0.05"/>
+<param name="mlMinStopFrame" value="1mil"/>
 <param name="mlMaxStopFrame" value="2mil"/>
-<param name="mlMinCreamFrame" value="0mil"/>
-<param name="mlMaxCreamFrame" value="0mil"/>
-<param name="mlViaStopLimit" value="100mil"/>
-<param name="srRoundness" value="0"/>
-<param name="srMinRoundness" value="0mil"/>
-<param name="srMaxRoundness" value="0mil"/>
+<param name="mlMinCreamFrame" value="2mil"/>
+<param name="mlMaxCreamFrame" value="10mil"/>
+<param name="mlViaStopLimit" value="30mil"/>
+<param name="srRoundness" value="0.1"/>
+<param name="srMinRoundness" value="2mil"/>
+<param name="srMaxRoundness" value="10mil"/>
 <param name="slThermalIsolate" value="10mil"/>
 <param name="slThermalsForVias" value="0"/>
 <param name="dpMaxLengthDifference" value="10mm"/>
@@ -483,7 +468,7 @@ design rules under a new name.</description>
 <param name="checkGrid" value="0"/>
 <param name="checkAngle" value="0"/>
 <param name="checkFont" value="1"/>
-<param name="checkRestrict" value="0"/>
+<param name="checkRestrict" value="1"/>
 <param name="useDiameter" value="13"/>
 <param name="maxErrors" value="50"/>
 </designrules>
@@ -686,7 +671,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="GND">
 <contactref element="P7" pad="2"/>
-<polygon width="0.3048" layer="16">
+<polygon width="0.6096" layer="16">
 <vertex x="0" y="53.34"/>
 <vertex x="0" y="0"/>
 <vertex x="31.75" y="0"/>
@@ -732,8 +717,8 @@ design rules under a new name.</description>
 <wire x1="43.18" y1="10.795" x2="39.37" y2="10.795" width="1.778" layer="1"/>
 <wire x1="39.37" y1="14.605" x2="43.18" y2="14.605" width="1.778" layer="1"/>
 <wire x1="39.37" y1="17.78" x2="43.18" y2="17.78" width="1.778" layer="1"/>
-<wire x1="43.18" y1="17.78" x2="43.18" y2="13.97" width="1.778" layer="1"/>
-<wire x1="43.18" y1="13.97" x2="43.18" y2="10.795" width="1.778" layer="1"/>
+<wire x1="43.18" y1="17.78" x2="43.18" y2="14.5923" width="1.778" layer="1"/>
+<wire x1="43.18" y1="14.5923" x2="43.18" y2="10.795" width="1.778" layer="1"/>
 <wire x1="39.37" y1="20.955" x2="43.18" y2="20.955" width="1.778" layer="1"/>
 <wire x1="43.18" y1="20.955" x2="43.18" y2="24.13" width="1.778" layer="1"/>
 <wire x1="43.18" y1="24.13" x2="39.37" y2="24.13" width="1.778" layer="1"/>
@@ -749,11 +734,11 @@ design rules under a new name.</description>
 <wire x1="39.37" y1="43.18" x2="43.18" y2="43.18" width="1.778" layer="1"/>
 <wire x1="43.18" y1="43.18" x2="43.18" y2="46.355" width="1.778" layer="1"/>
 <wire x1="43.18" y1="46.355" x2="39.37" y2="46.355" width="1.778" layer="1"/>
-<wire x1="39.37" y1="14.605" x2="43.18" y2="13.97" width="0.3048" layer="1"/>
-<wire x1="43.18" y1="17.78" x2="43.18" y2="20.955" width="0.3048" layer="1"/>
-<wire x1="43.18" y1="30.48" x2="43.18" y2="24.13" width="0.3048" layer="1"/>
-<wire x1="43.18" y1="33.02" x2="43.18" y2="36.83" width="0.3048" layer="1"/>
-<wire x1="43.18" y1="39.37" x2="43.18" y2="43.18" width="0.3048" layer="1"/>
+<wire x1="39.37" y1="14.605" x2="43.18" y2="14.5923" width="1.778" layer="1"/>
+<wire x1="43.18" y1="17.78" x2="43.18" y2="20.955" width="1.778" layer="1"/>
+<wire x1="43.18" y1="30.48" x2="43.18" y2="24.13" width="1.778" layer="1"/>
+<wire x1="43.18" y1="33.655" x2="43.18" y2="36.83" width="1.778" layer="1"/>
+<wire x1="43.18" y1="40.005" x2="43.18" y2="43.18" width="1.778" layer="1"/>
 <wire x1="39.37" y1="30.48" x2="39.37" y2="27.305" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="D3">
@@ -808,7 +793,7 @@ design rules under a new name.</description>
 <wire x1="24.13" y1="50.8" x2="21.35405" y2="48.02405" width="0.6096" layer="1"/>
 <wire x1="21.35405" y1="48.02405" x2="19.558" y2="43.688" width="0.6096" layer="1" curve="45"/>
 <wire x1="17.526" y1="30.48" x2="17.145" y2="30.48" width="0.6096" layer="16"/>
-<via x="19.558" y="43.688" extent="1-16" drill="0.6096"/>
+<via x="19.558" y="43.688" extent="1-16" drill="0.8"/>
 </signal>
 <signal name="D10">
 <contactref element="J1" pad="D10"/>
@@ -824,7 +809,7 @@ design rules under a new name.</description>
 <wire x1="11.43" y1="25.634296875" x2="13.0325125" y2="21.7654875" width="0.6096" layer="1" curve="44.999977"/>
 <wire x1="13.0325125" y1="21.7654875" x2="13.287546875" y2="21.510453125" width="0.6096" layer="1"/>
 <wire x1="26.035" y1="15.24" x2="21.9075" y2="16.8275" width="0.6096" layer="16"/>
-<via x="21.9075" y="16.8275" extent="1-16" drill="0.6"/>
+<via x="21.9075" y="16.8275" extent="1-16" drill="0.8"/>
 </signal>
 <signal name="D11">
 <contactref element="J1" pad="D11"/>
@@ -921,9 +906,6 @@ design rules under a new name.</description>
 <wire x1="19.685" y1="7.360915625" x2="17.3479875" y2="10.677146875" width="1.016" layer="1" curve="70.346169"/>
 <wire x1="17.3479875" y1="10.677146875" x2="15.24" y2="11.43" width="1.016" layer="1"/>
 <wire x1="15.24" y1="11.43" x2="13.97" y2="11.43" width="1.016" layer="1"/>
-</signal>
-<signal name="N$6">
-<wire x1="43.18" y1="46.0375" x2="43.18" y2="7.3025" width="2.1844" layer="1"/>
 </signal>
 <signal name="N$11">
 <contactref element="Q1" pad="G"/>
@@ -1025,9 +1007,9 @@ design rules under a new name.</description>
 <wire x1="12.87150625" y1="6.332990625" x2="12.5150875" y2="6.808215625" width="0.6096" layer="1"/>
 <wire x1="12.5150875" y1="6.808215625" x2="11.43" y2="10.063478125" width="0.6096" layer="1" curve="-36.869878"/>
 <wire x1="11.43" y1="10.063478125" x2="11.43" y2="12.065" width="0.6096" layer="1"/>
-<via x="11.43" y="12.065" extent="1-16" drill="0.7" shape="square"/>
+<via x="11.43" y="12.065" extent="1-16" drill="0.8" shape="square"/>
 <wire x1="11.43" y1="12.065" x2="11.43" y2="17.25395" width="0.6096" layer="16"/>
-<via x="11.43" y="17.25395" extent="1-16" drill="0.6" shape="square"/>
+<via x="11.43" y="17.25395" extent="1-16" drill="0.8" shape="square"/>
 <wire x1="11.43" y1="17.25395" x2="10.837309375" y2="18.265734375" width="0.6096" layer="1"/>
 <wire x1="10.837309375" y1="18.265734375" x2="8.89" y2="25.442628125" width="0.6096" layer="1" curve="-30.361198"/>
 <wire x1="8.89" y1="25.442628125" x2="8.89" y2="35.56" width="0.6096" layer="1"/>
@@ -1044,38 +1026,33 @@ design rules under a new name.</description>
 </signals>
 <errors>
 <approved hash="3,1,0a386a4e7a360b1c"/>
-<approved hash="3,1,07e1b002704c559a"/>
-<approved hash="3,1,e5ee9b089b9be57d"/>
-<approved hash="3,1,64e21a041b956573"/>
-<approved hash="3,1,65c21b241c6e6288"/>
-<approved hash="3,1,1bde6538647d1a9b"/>
-<approved hash="19,1,a07f1f3b7a5eb934"/>
-<approved hash="19,1,d37cc7a9e32ad5f7"/>
-<approved hash="19,1,3e7eec96d72cebb2"/>
-<approved hash="19,1,e0193572fa4921fa"/>
-<approved hash="19,1,d073eb118d9ccab4"/>
-<approved hash="19,1,a07ffc1923553b75"/>
 <approved hash="19,1,26780ba3aece7508"/>
-<approved hash="19,1,227cd99a60d57914"/>
-<approved hash="19,1,a87d3e22d94e330b"/>
-<approved hash="19,1,a87dd51a4c554514"/>
-<approved hash="19,1,2a7a26930dc9f316"/>
+<approved hash="19,1,d073eb118d9ccab4"/>
+<approved hash="19,1,d37cc7a9e32ad5f7"/>
 <approved hash="19,1,3e709791221c7db0"/>
 <approved hash="19,1,a37d783682323933"/>
+<approved hash="19,1,a07f1f3b7a5eb934"/>
+<approved hash="19,1,3e7eec96d72cebb2"/>
+<approved hash="19,1,e0193572fa4921fa"/>
+<approved hash="19,1,a87d3e22d94e330b"/>
+<approved hash="19,1,a07ffc1923553b75"/>
+<approved hash="19,1,a87dd51a4c554514"/>
+<approved hash="19,1,227cd99a60d57914"/>
+<approved hash="19,1,2a7a26930dc9f316"/>
 <approved hash="19,1,7b2589e3243d4747"/>
 <approved hash="19,1,fffeeb8ae5e9f19d"/>
-<approved hash="19,1,60f9f48df4266052"/>
-<approved hash="19,1,ee5efa2af811ec65"/>
+<approved hash="19,1,60f7f483f0da64ae"/>
 <approved hash="19,1,7302e7769a550e21"/>
-<approved hash="19,1,7878ec0ce028745c"/>
+<approved hash="19,1,771ce368da574e23"/>
+<approved hash="19,1,60f9f48df4266052"/>
 <approved hash="19,1,5de7cc7c867137e6"/>
 <approved hash="19,1,51aea223cade195f"/>
-<approved hash="19,1,60f7f483f0da64ae"/>
-<approved hash="19,1,771ce368da574e23"/>
+<approved hash="19,1,7878ec0ce028745c"/>
+<approved hash="19,1,ee5efa2af811ec65"/>
+<approved hash="19,1,aa388ec0f0d7d42f"/>
+<approved hash="19,1,923cb6c4b02494dc"/>
 <approved hash="19,1,afba8b428a47aebf"/>
 <approved hash="19,1,a3b4874c8676a28e"/>
-<approved hash="19,1,923cb6c4b02494dc"/>
-<approved hash="19,1,aa388ec0f0d7d42f"/>
 </errors>
 </board>
 </drawing>

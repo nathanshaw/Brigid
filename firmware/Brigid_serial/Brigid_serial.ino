@@ -1,11 +1,12 @@
-# define NUM_SOLENOIDS 6
+#define NUM_SOLENOIDS 6
+#define ARDUINO_ID 1
+#define LED_TEST 1
 
 #include <avr/interrupt.h>
 #include <avr/io.h>
 
 #define LED_POWER 12
 #define LED_STATUS 13
-#define ARDUINO_ID 1
 #define RED_LED A2
 #define GREEN_LED A3
 #define BLUE_LED A4

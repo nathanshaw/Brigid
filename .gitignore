@@ -1,3 +1,4 @@
+*.DS_Store
 # Ignore list for Eagle, a PCB layout tool
 
 # Backup files
@@ -28,7 +29,7 @@ eagle.epf
 *.crs
 
 *.dri
-*.drl
+*.drl 
 *.gpi
 *.pls
 

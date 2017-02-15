@@ -1,15 +1,21 @@
 #define NUM_SOLENOIDS 6
-#define ARDUINO_ID 1
-#define LED_TEST 1
+// botnum/board type/board num
+#define BOT_ID 1
+#define BOT_TYPE 1
+#define ARDUINO_ID 5
+
+
+#define BOOT_TEST 1
+#define LED_FEEDBACK 1
 
 #include <avr/interrupt.h>
 #include <avr/io.h>
 
 #define LED_POWER 12
 #define LED_STATUS 13
-#define RED_LED A2
+#define RED_LED A4
 #define GREEN_LED A3
-#define BLUE_LED A4
+#define BLUE_LED A2
 // if using MEEPO the LED pins are differerent
 
 char bytes[2];
@@ -22,6 +28,14 @@ int statustimer = 0;
 int actuators[] = {
   3, 5, 6, 9, 10, 11
 };
+// for homados
+/*
+int actuators[] = {
+  2, 3, 4, 5, 6, 7, 8, 9, 10, 
+  22, 24, 26, 28, 30, 32, 34
+};
+*/
+
 
 void setup() {
   Serial.begin(57600);
@@ -39,7 +53,7 @@ void setup() {
     pinMode(actuators[i], OUTPUT);
     digitalWrite(actuators[i], LOW);
   }
-  if (LED_TEST == 1){
+  if (BOOT_TEST == 1){
     for (int i; i < 6; i++) {
       digitalWrite(actuators[i], HIGH);
       delay(100);
@@ -85,6 +99,8 @@ void loop() {
       // message required for "handshake" to occur
       // happens once per Arduino at the start of the ChucK serial code
       if (pitch == 63 && velocity == 1023 && handshake == 0) {
+        Serial.write(BOT_ID);
+        Serial.write(BOT_TYPE);
         Serial.write(ARDUINO_ID);
         handshake = 1;
       }

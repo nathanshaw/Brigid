@@ -2,10 +2,11 @@
 // botnum/board type/board num
 #define BOT_ID 1
 #define BOT_TYPE 1
-#define ARDUINO_ID 5
+#define ARDUINO_ID 4
 
-
+// will trigger each solinoid during init
 #define BOOT_TEST 1
+// will flash LED's when board receives message
 #define LED_FEEDBACK 1
 
 #include <avr/interrupt.h>
@@ -16,7 +17,10 @@
 #define RED_LED A4
 #define GREEN_LED A3
 #define BLUE_LED A2
-// if using MEEPO the LED pins are differerent
+// brigid is 12 and 13
+// #define RED_LED 12
+// #define GREEN_LED 13
+// #define BLUE_LED 13
 
 char bytes[2];
 short notes[NUM_SOLENOIDS];
@@ -28,14 +32,6 @@ int statustimer = 0;
 int actuators[] = {
   3, 5, 6, 9, 10, 11
 };
-// for homados
-/*
-int actuators[] = {
-  2, 3, 4, 5, 6, 7, 8, 9, 10, 
-  22, 24, 26, 28, 30, 32, 34
-};
-*/
-
 
 void setup() {
   Serial.begin(57600);
@@ -55,14 +51,10 @@ void setup() {
   }
   if (BOOT_TEST == 1){
     for (int i; i < 6; i++) {
-      digitalWrite(actuators[i], HIGH);
-      delay(100);
-      digitalWrite(actuators[i], LOW);
-      delay(1000);
+      notes[i] = 50;
+      delay(350);
     } 
   }
-  digitalWrite(GREEN_LED, LOW);
-  digitalWrite(RED_LED, LOW); 
 }
 
 ISR(TIMER2_OVF_vect) {
@@ -103,6 +95,8 @@ void loop() {
         Serial.write(BOT_TYPE);
         Serial.write(ARDUINO_ID);
         handshake = 1;
+        digitalWrite(GREEN_LED, LOW);
+        digitalWrite(RED_LED, LOW); 
       }
       if (pitch >= 0 && pitch <= NUM_SOLENOIDS) {
         statustimer = 120;
